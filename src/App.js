@@ -8,10 +8,21 @@ import Lixeira from "./assets/lixeira.svg"
 export default function App ()  {
   // React Hooks -> Ferramentas auxiliares
   const [ users, setUsers ] = useState([])
+  const [ nome, setNome ] = useState()
+  const [ idade, setIdade ] = useState()
 
 
   function addNewUser() {
-    setUsers([{ id: Math.random(), nome: "Raphael", idade: 19}])
+    setUsers([...users,{id: Math.random(), nome, idade}])
+    // spread operator (...)
+  }
+
+  function changeInputNome(event) {
+    setNome(event.target.value)
+  }
+
+  function changeInputIdade(event) {
+    setIdade(event.target.value)
   }
 
   return (
@@ -22,10 +33,10 @@ export default function App ()  {
           <H1>Olá!</H1>
 
           <InputLabel>Nome</InputLabel>
-          <Input placeholder="Nome"></Input>
+          <Input onChange={changeInputNome} placeholder="Nome"></Input>
 
           <InputLabel>Idade</InputLabel>
-          <Input placeholder="Idade"></Input>
+          <Input onChange={changeInputIdade} placeholder="Idade"></Input>
 
           <Button onClick={addNewUser}>Cadastrar <img alt="seta" src={Seta}/></Button>
 
