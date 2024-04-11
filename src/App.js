@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Container, Imagem, ContainerItens, H1, InputLabel, Input, Button, User } from "./styles"
+
+import axios from "axios"
+
 import People from "./assets/img-pessoas-inicio.svg"
 import Seta from "./assets/seta-direita.svg"
 import Lixeira from "./assets/lixeira.svg"
@@ -11,9 +14,13 @@ export default function App ()  {
   const inputNome = useRef()
   const inputIdade = useRef()
 
-  function adicionarUser() {
-    setUsers([...users,{id: Math.random(), nome: inputNome.current.value, idade: inputIdade.current.value}])
+  async function adicionarUser() {
+    const data = await axios.post("http://localhost:3001/users", { name: inputNome.current.value, age: inputIdade.current.value, })
+    
+    // setUsers([...users,{id: Math.random(), nome: inputNome.current.value, idade: inputIdade.current.value}])
     // spread operator (...)
+
+    console.log(data)
   }
 
   function excluirUser(userId) {
