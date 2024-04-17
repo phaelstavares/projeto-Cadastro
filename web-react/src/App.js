@@ -15,16 +15,28 @@ export default function App ()  {
   const inputIdade = useRef()
 
   async function adicionarUser() {
-    //const { data: newUser } = await axios.post("http://localhost:3001/users", { name: inputNome.current.value, age: inputIdade.//current.value, })
+    const { data: newUser } = await axios.post("http://localhost:3001/users", { name: inputNome.current.value, age: inputIdade.current.value, })
     
-    //setUsers([...users, newUser])
+    setUsers([...users, newUser])
     // spread operator (...)
-
-    const {data: newUsers} = await axios.get("http://localhost:3001/users")
-    setUsers(newUsers)
   }
 
-  function excluirUser(userId) {
+  useEffect(() => {
+    async function fetchUsers() {
+      const {data: newUsers} = await axios.get("http://localhost:3001/users")
+      setUsers(newUsers)
+    }
+
+    fetchUsers()
+  }, [])
+
+  // React Hooks -> useEffect (efeito colateral)
+  // A minha aplicação inicia (A página carregou, useEffect é chamado)
+  // Quando um estado que está no array de dependência do useEffect é alterado
+
+  async function excluirUser(userId) {
+    await axios.delete(`http://localhost:3001/users/${userId}`)
+
     const NovoUsers = users.filter(user => user.id !== userId)
     
     setUsers(NovoUsers)
