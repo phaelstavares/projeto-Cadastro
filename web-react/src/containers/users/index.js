@@ -1,25 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Container, Imagem, ContainerItens, H1, InputLabel, Input, Button, User } from "./styles"
+import React, { useState, useEffect } from "react";
+import { Container, Imagem, ContainerItens, H1, Button, User } from "./styles"
 
 import axios from "axios"
 
-import People from "../../assets/img-pessoas-inicio.svg"
-import Seta from "../../assets/seta-direita.svg"
+import Avatar from "../../assets/img-pessoas-usuarios.svg"
+import Seta from "../../assets/seta-esquerda.svg"
 import Lixeira from "../../assets/lixeira.svg"
 
 // JSX
-export default function App ()  {
+export default function Users ()  {
   // React Hooks -> Ferramentas auxiliares
   const [ users, setUsers ] = useState([])
-  const inputNome = useRef()
-  const inputIdade = useRef()
-
-  async function adicionarUser() {
-    const { data: newUser } = await axios.post("http://localhost:3001/users", { name: inputNome.current.value, age: inputIdade.current.value, })
-    
-    setUsers([...users, newUser])
-    // spread operator (...)
-  }
 
   useEffect(() => {
     async function fetchUsers() {
@@ -44,18 +35,10 @@ export default function App ()  {
 
   return (
     <Container>
-      <Imagem alt="logo imagem" src={People}/>
+      <Imagem alt="logo imagem" src={Avatar}/>
         <ContainerItens>
 
-          <H1>Olá!</H1>
-
-          <InputLabel>Nome</InputLabel>
-          <Input ref={inputNome} placeholder="Nome"></Input>
-
-          <InputLabel>Idade</InputLabel>
-          <Input ref={inputIdade} placeholder="Idade"></Input>
-
-          <Button onClick={adicionarUser}>Cadastrar <img alt="seta" src={Seta}/></Button>
+          <H1>Usuários</H1>
 
           <ul>
             { users.map(user => (
@@ -70,6 +53,9 @@ export default function App ()  {
             ))
             }
           </ul>
+
+          <Button><img alt="seta" src={Seta}/> Voltar</Button>
+
         </ContainerItens>
     </Container>
   )

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Background from "../../assets/fundo-inicio.png"
+import Background from "../../assets/fundo-usuarios.png"
 
 export const Container = styled.div `
     background: url("${Background}");
@@ -24,6 +24,8 @@ export const ContainerItens = styled.div `
     padding: 50px 36px;
     display: flex;
     flex-direction: column;
+
+    backdrop-filter: blur(45px);
 `
 
 export const H1 = styled.h1 `
@@ -36,44 +38,13 @@ export const H1 = styled.h1 `
     margin-bottom: 80px;
 `
 
-export const InputLabel = styled.p `
-    letter-spacing: -0.408px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    color: #EEEEEE;
-    margin-left: 25px;
-`
-
-export const Input = styled.input `
-    width: 342px;
-    height: 58px;
-    border-radius: 14px;
-    padding-left: 25px;
-    border: none;
-    outline: none;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: 34px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
-    color: #ffffff;
-
-    &::placeholder {
-        color: #ffffff;
-    }
-`
-
 export const Button = styled.button `
     width: 342px;
     height: 74px;
+    margin-top: 120px;
     border-radius: 14px;
-    background: rgba(0, 0, 0, 0.8);
-    border: none;
+    background: transparent;
+    border: 1px solid #ffffff;
     cursor: pointer;
 
     font-style: normal;
