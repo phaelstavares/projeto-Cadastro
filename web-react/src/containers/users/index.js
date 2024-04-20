@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Imagem, ContainerItens, H1, Button, User } from "./styles"
-
 import axios from "axios"
+
+import { Container, Imagem, ContainerItens, H1, Button, User } from "./styles"
 
 import Avatar from "../../assets/img-pessoas-usuarios.svg"
 import Seta from "../../assets/seta-esquerda.svg"
@@ -54,7 +54,7 @@ export default function Users ()  {
             }
           </ul>
 
-          <Button><img alt="seta" src={Seta}/> Voltar</Button>
+          <Button to="/"><img alt="seta" src={Seta}/> Voltar</Button>
 
         </ContainerItens>
     </Container>
