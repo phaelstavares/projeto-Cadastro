@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 
 import { Container, Imagem, ContainerItens, H1, Button, User } from "./styles"
 
@@ -11,6 +12,9 @@ import Lixeira from "../../assets/lixeira.svg"
 export default function Users ()  {
   // React Hooks -> Ferramentas auxiliares
   const [ users, setUsers ] = useState([])
+  const history = useHistory()
+
+  console.log(history)
 
   useEffect(() => {
     async function fetchUsers() {
@@ -31,6 +35,10 @@ export default function Users ()  {
     const NovoUsers = users.filter(user => user.id !== userId)
     
     setUsers(NovoUsers)
+  }
+
+  function goBackPage() {
+    history.goBack()
   }
 
   return (
@@ -54,7 +62,7 @@ export default function Users ()  {
             }
           </ul>
 
-          <Button to="/"><img alt="seta" src={Seta}/> Voltar</Button>
+          <Button onClick={goBackPage}><img alt="seta" src={Seta}/> Voltar</Button>
 
         </ContainerItens>
     </Container>

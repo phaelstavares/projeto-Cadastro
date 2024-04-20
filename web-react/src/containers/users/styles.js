@@ -39,9 +39,7 @@ export const H1 = styled.h1 `
     margin-bottom: 80px;
 `
 
-export const Button = styled(Link) `
-    text-decoration: none;
-
+export const Button = styled.button `
     width: 342px;
     height: 74px;
     margin-top: 120px;
