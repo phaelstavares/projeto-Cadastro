@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 import { Container, Imagem, ContainerItens, H1, InputLabel, Input, Button } from "./styles"
 
@@ -12,12 +13,15 @@ export default function App ()  {
   const [ users, setUsers ] = useState([])
   const inputNome = useRef()
   const inputIdade = useRef()
+  const navigate = useNavigate()
 
   async function adicionarUser() {
     const { data: newUser } = await axios.post("http://localhost:3001/users", { name: inputNome.current.value, age: inputIdade.current.value, })
     
     setUsers([...users, newUser])
     // spread operator (...)
+
+    navigate("/usuarios")
   }
 
   return (
