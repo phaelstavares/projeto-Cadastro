@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Background from "../../assets/fundo-inicio.png"
+import { Link } from "react-router-dom";
 
 export const Container = styled.div `
     background: url("${Background}");
@@ -11,6 +12,7 @@ export const Container = styled.div `
     gap: 40px;
     
     height: 100%;
+    min-height: 100vh;
 `
 
 export const Imagem = styled.img `
@@ -24,6 +26,8 @@ export const ContainerItens = styled.div `
     padding: 50px 36px;
     display: flex;
     flex-direction: column;
+
+    min-height: calc(100vh - 250px);
 `
 
 export const H1 = styled.h1 `
@@ -68,7 +72,7 @@ export const Input = styled.input `
     }
 `
 
-export const Button = styled.button `
+export const Button = styled(Link) `
     width: 342px;
     height: 74px;
     margin-top: 130px;

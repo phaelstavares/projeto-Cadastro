@@ -12,6 +12,7 @@ export const Container = styled.div `
     gap: 40px;
     
     height: 100%;
+    min-height: 100vh;
 `
 
 export const Imagem = styled.img `
@@ -27,6 +28,8 @@ export const ContainerItens = styled.div `
     flex-direction: column;
 
     backdrop-filter: blur(45px);
+
+    min-height: calc(100vh - 170px);
 `
 
 export const H1 = styled.h1 `
@@ -39,7 +42,7 @@ export const H1 = styled.h1 `
     margin-bottom: 80px;
 `
 
-export const Button = styled.button `
+export const Button = styled(Link) `
     width: 342px;
     height: 74px;
     margin-top: 120px;

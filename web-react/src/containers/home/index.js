@@ -33,7 +33,7 @@ export default function App ()  {
           <InputLabel>Idade</InputLabel>
           <Input ref={inputIdade} placeholder="Idade"></Input>
 
-          <Button onClick={adicionarUser}>Cadastrar <img alt="seta" src={Seta}/></Button>
+          <Button to="/usuarios" onClick={adicionarUser}>Cadastrar <img alt="seta" src={Seta}/></Button>
 
         </ContainerItens>
     </Container>
