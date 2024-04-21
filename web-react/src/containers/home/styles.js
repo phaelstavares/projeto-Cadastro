@@ -75,7 +75,7 @@ export const Input = styled.input `
 export const Button = styled(Link) `
     width: 342px;
     height: 74px;
-    margin-top: 130px;
+    margin-top: 40px;
     border-radius: 14px;
     background: rgba(0, 0, 0, 0.8);
     border: none;

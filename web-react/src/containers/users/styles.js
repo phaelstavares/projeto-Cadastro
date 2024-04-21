@@ -45,7 +45,7 @@ export const H1 = styled.h1 `
 export const Button = styled(Link) `
     width: 342px;
     height: 74px;
-    margin-top: 120px;
+    margin-top: 40px;
     border-radius: 14px;
     background: transparent;
     border: 1px solid #ffffff;
