@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
-import { Container, Imagem, ContainerItens, H1, InputLabel, Input, Button } from "./styles"
+import H1 from "../../components/title/index"
+import { Container, Imagem, ContainerItens, InputLabel, Input, Button } from "./styles"
 
 import People from "../../assets/img-pessoas-inicio.svg"
 import Seta from "../../assets/seta-direita.svg"
