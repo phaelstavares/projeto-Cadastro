@@ -2,7 +2,7 @@ import React from "react";
 
 import { ContainerItens as Container } from "./styles";
 
-export default function ContainerItens() {
+export default function ContainerItens({children}) {
 
-    return <Container></Container>
+    return <Container>{children}</Container>
 }

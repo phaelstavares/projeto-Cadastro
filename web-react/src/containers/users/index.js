@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
-import H1 from "../../components/title/index"
-import { Container, Imagem, ContainerItens, Button, User } from "./styles"
+import H1 from "../../components/title"
+import ContainerItens from "../../components/ContainerItens"
+import { Container, Imagem, Button, User } from "./styles"
 
 import Avatar from "../../assets/img-pessoas-usuarios.svg"
 import Seta from "../../assets/seta-esquerda.svg"
