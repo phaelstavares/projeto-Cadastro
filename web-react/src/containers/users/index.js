@@ -44,7 +44,7 @@ export default function Users ()  {
   return (
     <Container>
       <Imagem alt="logo imagem" src={Avatar}/>
-        <ContainerItens>
+        <ContainerItens isBlur={true}>
 
           <H1>Usuários</H1>
 

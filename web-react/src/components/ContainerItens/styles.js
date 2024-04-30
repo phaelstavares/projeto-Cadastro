@@ -9,4 +9,9 @@ export const ContainerItens = styled.div `
     flex-direction: column;
 
     min-height: calc(100vh - 250px);
+
+    ${ props => props.isBlur && `
+        backdrop-filter: blur(45px);
+        min-height: calc(100vh - 170px);
+    ` }
 `
