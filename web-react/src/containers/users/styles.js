@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import Background from "../../assets/fundo-usuarios.png"
-import { Link } from "react-router-dom"
 
 export const Container = styled.div `
     background: url("${Background}");
@@ -17,35 +16,6 @@ export const Container = styled.div `
 
 export const Imagem = styled.img `
     margin-top: 30px;
-`
-
-export const Button = styled(Link) `
-    width: 342px;
-    height: 74px;
-    margin-top: 40px;
-    border-radius: 14px;
-    background: transparent;
-    border: 1px solid #ffffff;
-    cursor: pointer;
-
-    font-style: normal;
-    font-size: 17px;
-    font-weight: bold;
-    line-height: 28px;
-    color: #ffffff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    &:hover {
-        opacity: 0.9;
-    }
-
-    &:active {
-        opacity: 0.6;
-    }
 `
 
 export const User = styled.li `

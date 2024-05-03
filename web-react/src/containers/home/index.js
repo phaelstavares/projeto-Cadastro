@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 import H1 from "../../components/title"
 import ContainerItens from "../../components/ContainerItens"
-import { Container, Imagem, InputLabel, Input, Button } from "./styles"
+import ContainerButton from "../../components/Button"
+import { Container, Imagem, InputLabel, Input } from "./styles"
 
 import People from "../../assets/img-pessoas-inicio.svg"
 import Seta from "../../assets/seta-direita.svg"
@@ -39,7 +40,7 @@ export default function App ()  {
           <InputLabel>Idade</InputLabel>
           <Input ref={inputIdade} placeholder="Idade"></Input>
 
-          <Button to="/usuarios" onClick={adicionarUser}>Cadastrar <img alt="seta" src={Seta}/></Button>
+          <ContainerButton to="/usuarios" onClick={adicionarUser}>Cadastrar <img alt="seta" src={Seta}/></ContainerButton>
 
         </ContainerItens>
     </Container>

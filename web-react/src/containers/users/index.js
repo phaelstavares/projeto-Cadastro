@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 import H1 from "../../components/title"
 import ContainerItens from "../../components/ContainerItens"
-import { Container, Imagem, Button, User } from "./styles"
+import ContainerButton from "../../components/Button"
+import { Container, Imagem, User } from "./styles"
 
 import Avatar from "../../assets/img-pessoas-usuarios.svg"
 import Seta from "../../assets/seta-esquerda.svg"
@@ -62,7 +63,7 @@ export default function Users ()  {
             }
           </ul>
 
-          <Button onClick={goBackPage} to="/"><img alt="seta" src={Seta}/> Voltar</Button>
+          <ContainerButton isBack={true} onClick={goBackPage} to="/"><img alt="seta" src={Seta}/> Voltar</ContainerButton>
 
         </ContainerItens>
     </Container>
